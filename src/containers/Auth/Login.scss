@@ -1,0 +1,127 @@
+.login-background {
+  height: 100vh;
+  background: linear-gradient(
+    135deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+
+  .login-container {
+    position: absolute;
+    width: 400px;
+    height: 450px;
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    .text-login {
+      text-align: center;
+      font-weight: 600;
+      font-size: 24px;
+      padding-top: 10px;
+    }
+
+    .custom-input-password {
+      position: relative;
+      i {
+        position: absolute;
+        right: 5px;
+        top: 10px;
+        cursor: pointer;
+      }
+    }
+
+    .btn-login {
+      color: #fff;
+      font-size: 1.3rem;
+      width: 100%;
+      margin: 10px 0;
+      height: 30px;
+      outline: none;
+      border: none;
+      border-radius: 15px;
+      background: linear-gradient(
+        135deg,
+        rgba(34, 193, 195, 1) 0%,
+        rgba(253, 187, 45, 1) 100%
+      );
+    }
+
+    .forgot-password {
+      font-size: 12px;
+    }
+
+    .social-login {
+      display: flex;
+      font-size: 1.4rem;
+      justify-content: center;
+
+      a {
+        text-decoration: none;
+        margin: 4px;
+      }
+
+      .google {
+        background-color: #c32424;
+        border-radius: 50px;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .facebook {
+        background-color: rgb(36, 29, 225);
+        border-radius: 50px;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+      }
+
+      .github {
+        background-color: rgb(247, 207, 85);
+        border-radius: 50px;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+      }
+
+      .twitter {
+        background-color: rgb(89, 155, 232);
+        border-radius: 50px;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+      }
+
+      .line {
+        background-color: rgb(37, 247, 82);
+        border-radius: 50px;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
