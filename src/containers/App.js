@@ -13,8 +13,7 @@ import {
 import { path } from "../utils";
 
 import Home from "../routes/Home";
-// import Login from "../routes/Login";
-// import Login from "./Auth/Login";
+
 import Login from "./Auth/Login";
 import Header from "./Header/Header";
 import System from "../routes/System";
@@ -85,7 +84,7 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {
     started: state.app.started,
-    isLoggedIn: state.admin.isLoggedIn,
+    isLoggedIn: state.user.isLoggedIn,
   };
 };
 
