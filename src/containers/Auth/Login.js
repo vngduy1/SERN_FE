@@ -44,6 +44,7 @@ class Login extends Component {
       }
       if (data && data.errCode === 0) {
         this.props.userLoginSuccess(data.user);
+        this.redirectToSystemPage();
       }
     } catch (error) {
       if (error.response) {
@@ -52,6 +53,12 @@ class Login extends Component {
         }
       }
     }
+  };
+
+  redirectToSystemPage = () => {
+    const { navigate } = this.props;
+    const redirectPath = "/system/user-manage";
+    navigate(`${redirectPath}`);
   };
 
   handleShowHidePassword = () => {
