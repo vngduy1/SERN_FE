@@ -53,3 +53,40 @@
     cursor: pointer;
   }
 }
+
+.btn-btn-save {
+  border: none;
+  outline: none;
+  background: rgb(16, 159, 235);
+
+  &:hover {
+    background-color: rgb(16, 159, 235) !important;
+    cursor: pointer;
+  }
+}
+
+.modal-user-container {
+  .modal-user-body {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      width: 48%;
+      color: rgb(26, 35, 212);
+
+      &.max-width-input {
+        width: 100%;
+      }
+
+      input {
+        border-radius: 3px;
+        outline: none;
+        height: 30px;
+        border: 1px solid grey;
+        padding: 0 10px;
+      }
+    }
+  }
+}
