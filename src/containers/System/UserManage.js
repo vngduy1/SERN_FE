@@ -2,21 +2,13 @@ import React, { Component } from "react";
 // import { FormattedMessage } from 'react-intl';
 import { connect } from "react-redux";
 import "./UserManage.scss";
-import { getAllUser } from "../../services/userService";
+import { getAllUser, createNewUserService } from "../../services/userService";
+import ModalUser from "./ModalUser";
+
 class UserManage extends Component {
   constructor(props) {
     super(props);
-    this.state = { arrUsers: [] };
-  }
-
-  async componentDidMount() {
-    let response = await getAllUser("ALL");
-    if (response) {
-      this.setState({
-        arrUsers: response.users,
-      });
-      console.log("check state user 1", this.state.arrUsers);
-    }
+    this.state = { arrUsers: [], isOpenModalUser: false };
   }
 
   /**Life cycle
@@ -26,14 +18,69 @@ class UserManage extends Component {
    *
    */
 
+  async componentDidMount() {
+    await this.getAllUser();
+  }
+
+  handleAddNewUser = () => {
+    this.setState({
+      isOpenModalUser: true,
+    });
+  };
+
+  toggleUserModal = () => {
+    this.setState({
+      isOpenModalUser: !this.state.isOpenModalUser,
+    });
+  };
+
+  getAllUser = async () => {
+    let response = await getAllUser("ALL");
+    if (response) {
+      this.setState({
+        arrUsers: response.users,
+      });
+    }
+  };
+
+  createNewUser = async (data) => {
+    try {
+      let response = await createNewUserService(data);
+      if (response && response.errCode !== 0) {
+        alert(response.errMessage);
+      } else {
+        await this.getAllUser();
+        this.setState({
+          isOpenModalUser: false,
+        });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   render() {
     let arrUsers = this.state.arrUsers;
     return (
       <div className="users-container">
+        <ModalUser
+          isOpen={this.state.isOpenModalUser}
+          toggleUser={this.toggleUserModal}
+          createNewUser={this.createNewUser}
+        />
         <div className="container">
-          <div className="row mt-3">
+          <div className="mt-3">
             <div className="title text-center">manage</div>
-            <table className="table table-striped" id="customers">
+            <div className="">
+              <button
+                className="btn btn-primary px-3"
+                onClick={() => this.handleAddNewUser()}
+              >
+                <i className="fas fa-plus-circle m-2"></i>
+                Add new user
+              </button>
+            </div>
+            <table className="table table-striped mt-3" id="customers">
               <thead>
                 <tr>
                   <th scope="col">id</th>
