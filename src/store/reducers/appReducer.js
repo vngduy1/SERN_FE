@@ -9,7 +9,7 @@ const initContentOfConfirmModal = {
 
 const initialState = {
   started: true,
-  language: "en",
+  language: "vi",
   systemMenuPath: "/system/user-manage",
   contentOfConfirmModal: {
     ...initContentOfConfirmModal,
@@ -23,6 +23,7 @@ const appReducer = (state = initialState, action) => {
         ...state,
         started: true,
       };
+
     case actionTypes.SET_CONTENT_OF_CONFIRM_MODAL:
       return {
         ...state,
@@ -30,6 +31,13 @@ const appReducer = (state = initialState, action) => {
           ...state.contentOfConfirmModal,
           ...action.contentOfConfirmModal,
         },
+      };
+
+    case actionTypes.CHANGE_LANGUAGE:
+      console.log("dvn check redux", action);
+      return {
+        ...state,
+        language: action.language,
       };
     default:
       return state;
