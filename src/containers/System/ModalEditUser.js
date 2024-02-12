@@ -54,7 +54,7 @@ class ModalEditUser extends Component {
         break;
       }
     }
-    return true;
+    return check;
   };
 
   handleEditUser = () => {

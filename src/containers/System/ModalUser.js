@@ -55,7 +55,7 @@ class ModalUser extends Component {
         break;
       }
     }
-    return true;
+    return isValid;
   };
 
   handleAddNewUser = () => {
