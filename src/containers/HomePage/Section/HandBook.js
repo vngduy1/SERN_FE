@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Slider from "react-slick";
 
-class Specialty extends Component {
+class HandBook extends Component {
   changeLanguage = (language) => {
     this.props.changeLanguageAppRedux(language);
   };
@@ -13,7 +13,7 @@ class Specialty extends Component {
         <div className="section-share section-specialty">
           <div className="section-container">
             <div className="section-header">
-              <span className="title-section">Chuyên khoa phổ biến</span>
+              <span className="title-section">Cẩm nang</span>
               <button className="btn-section">Xem thêm</button>
             </div>
             <div className="section-body">
@@ -54,4 +54,4 @@ const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Specialty);
+export default connect(mapStateToProps, mapDispatchToProps)(HandBook);
