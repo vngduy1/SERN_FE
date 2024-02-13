@@ -12,31 +12,40 @@ class Specialty extends Component {
 
   render() {
     var settings = {
-      dots: true,
+      dots: false,
       infinite: true,
       speed: 500,
-      slidesToShow: 1,
+      slidesToShow: 3,
       slidesToScroll: 1,
     };
     return (
       <>
         <div className="section-specialty">
-          <div className="specialty-content">
-            specialty
-            <Slider {...settings}>
-              <div>
-                <h3 className="img-customize">1</h3>
-              </div>
-              <div>
-                <h3 className="img-customize">2</h3>
-              </div>
-              <div>
-                <h3 className="img-customize">3</h3>
-              </div>
-              <div>
-                <h3 className="img-customize">4</h3>
-              </div>
-            </Slider>
+          <div className="specialty-container">
+            <div className="specialty-header">
+              <span className="title-section">Chuyên khoa phổ biến</span>
+              <button className="btn-section">Xem thêm</button>
+            </div>
+            <div className="specialty-body">
+              <Slider {...settings}>
+                <div className="specialty-customize">
+                  <div className="bg-image"></div>
+                  <div>Cơ xương khớp 1</div>
+                </div>
+                <div className="specialty-customize">
+                  <div className="bg-image"></div>
+                  <div>Cơ xương khớp 2</div>
+                </div>
+                <div className="specialty-customize">
+                  <div className="bg-image"></div>
+                  <div>Cơ xương khớp 3</div>
+                </div>
+                <div className="specialty-customize">
+                  <div className="bg-image"></div>
+                  <div>Cơ xương khớp 4</div>
+                </div>
+              </Slider>
+            </div>
           </div>
         </div>
       </>
