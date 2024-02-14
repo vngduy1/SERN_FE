@@ -34,7 +34,6 @@ const appReducer = (state = initialState, action) => {
       };
 
     case actionTypes.CHANGE_LANGUAGE:
-      console.log("dvn check redux", action);
       return {
         ...state,
         language: action.language,
