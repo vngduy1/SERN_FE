@@ -1,26 +1,66 @@
 export const adminMenu = [
   {
+    //Quan ly user
     //hệ thống
-    name: "menu.system.header",
+    name: "menu.admin.manage-user",
     menus: [
       {
-        name: "menu.system.system-administrator.header",
-        subMenus: [
-          {
-            name: "menu.system.system-administrator.user-manage",
-            link: "/system/user-manage",
-          },
-          {
-            name: "menu.system.system-administrator.product-manage",
-            link: "/system/product-manage",
-          },
-          {
-            name: "menu.system.system-administrator.register-package-group-or-account",
-            link: "/system/register-package-group-or-account",
-          },
-        ],
+        name: "menu.admin.crud",
+        link: "/system/user-crud",
       },
-      // { name: 'menu.system.system-parameter.header', link: '/system/system-parameter' },
+      {
+        name: "menu.admin.crud-redux",
+        link: "/system/user-crud-redux",
+      },
+      {
+        name: "menu.admin.manage-doctor",
+        link: "/system/user-manage",
+      },
+      {
+        name: "menu.admin.manage-patient",
+        link: "/system/user-redux",
+      },
+    ],
+    // subMenus: [
+    //   {
+    //     name: "menu.system.system-administrator.user-manage",
+    //     link: "/system/user-manage",
+    //   },
+    //   {
+    //     name: "menu.system.system-administrator.user-redux",
+    //     link: "/system/user-redux",
+    // },
+    // { name: 'menu.system.system-parameter.header', link: '/system/system-parameter' },
+    // ],
+  },
+  //Quan ly Phong kham
+  {
+    name: "menu.admin.clinic",
+    menus: [
+      {
+        name: "menu.admin.manage-clinic",
+        link: "/system/manage-clinic",
+      },
+    ],
+  },
+  //Quan ly Chuyen khoa
+  {
+    name: "menu.admin.specialty",
+    menus: [
+      {
+        name: "menu.admin.manage-specialty",
+        link: "/system/manage-specialty",
+      },
+    ],
+  },
+  //Quan ly Cam nang
+  {
+    name: "menu.admin.handbook",
+    menus: [
+      {
+        name: "menu.admin.manage-handbook",
+        link: "/system/manage-handbook",
+      },
     ],
   },
 ];
