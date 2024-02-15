@@ -1,0 +1,92 @@
+#tableManageUser {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#tableManageUser td,
+#tableManageUser th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#tableManageUser tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#tableManageUser tr:hover {
+  background-color: #ddd;
+}
+
+#tableManageUser th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
+}
+
+.btn-btn-edit {
+  width: 50px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: orange;
+
+  &:hover {
+    background-color: transparent !important;
+    color: orange !important;
+    cursor: pointer;
+  }
+}
+
+.btn-btn-delete {
+  width: 50px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: red;
+
+  &:hover {
+    background-color: transparent !important;
+    color: red !important;
+    cursor: pointer;
+  }
+}
+
+.btn-btn-save {
+  border: none;
+  outline: none;
+  background: rgb(16, 159, 235);
+
+  &:hover {
+    background-color: rgb(16, 159, 235) !important;
+    cursor: pointer;
+  }
+}
+
+.modal-user-container {
+  .modal-user-body {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    .input-container {
+      display: flex;
+      flex-direction: column;
+      width: 48%;
+      color: rgb(26, 35, 212);
+
+      &.max-width-input {
+        width: 100%;
+      }
+
+      input {
+        border-radius: 3px;
+        outline: none;
+        height: 30px;
+        border: 1px solid grey;
+        padding: 0 10px;
+      }
+    }
+  }
+}
