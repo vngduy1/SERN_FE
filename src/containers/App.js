@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import { ConnectedRouter as Router } from "connected-react-router";
 import { history } from "../redux";
-import { ToastContainer } from "react-toastify";
+import { Bounce, ToastContainer } from "react-toastify";
 import CustomScrollbars from "../components/CustomScrollbars";
 
 import {
@@ -19,7 +19,7 @@ import Login from "./Auth/Login";
 import HomePage from "./HomePage/HomePage";
 import System from "../routes/System";
 
-import { CustomToastCloseButton } from "../components/CustomToast";
+// import { CustomToastCloseButton } from "../components/CustomToast";
 class App extends Component {
   handlePersistorState = () => {
     const { persistor } = this.props;
@@ -60,8 +60,22 @@ class App extends Component {
                 </Switch>
               </CustomScrollbars>
             </div>
-
             <ToastContainer
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="light"
+              transition={Bounce}
+            />
+            <ToastContainer />
+
+            {/* <ToastContainer
               className="toast-container"
               toastClassName="toast-item"
               bodyClassName="toast-item-body"
@@ -72,7 +86,7 @@ class App extends Component {
               closeOnClick={false}
               draggable={false}
               closeButton={<CustomToastCloseButton />}
-            />
+            /> */}
           </div>
         </Router>
       </Fragment>
