@@ -4,6 +4,7 @@ import {
   createNewUserService,
   getAllUser,
   deleteUserService,
+  editUserService,
 } from "../../services/userService";
 
 import { toast } from "react-toastify";
@@ -159,6 +160,34 @@ export const deleteUser = (userId) => {
     } catch (error) {
       dispatch(deleteUsersFailed());
       toast.error("delete user fail");
+      console.log("fetchRoleFailed err", error);
+    }
+  };
+};
+
+export const editUsersSuccess = () => ({
+  type: actionTypes.EDIT_USER_SUCCESS,
+});
+
+export const editUsersFailed = () => ({
+  type: actionTypes.EDIT_USER_FAILED,
+});
+
+export const editUser = (data) => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await editUserService(data);
+      if (res && res.errCode === 0) {
+        toast.success("Update user success");
+        dispatch(editUsersSuccess());
+        dispatch(fetchAllUsersStart());
+      } else {
+        toast.error("Update user fail");
+        dispatch(editUsersFailed());
+      }
+    } catch (error) {
+      dispatch(editUsersSuccess());
+      toast.error("Update user fail");
       console.log("fetchRoleFailed err", error);
     }
   };
