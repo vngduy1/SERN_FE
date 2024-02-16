@@ -48,6 +48,7 @@
     "image": "Image",
     "phonenumber": "PhoneNumber",
     "position": "Position",
-    "role": "Role"
+    "role": "Role",
+    "edit": "edit"
   }
 }
