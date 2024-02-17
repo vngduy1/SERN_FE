@@ -50,5 +50,11 @@
     "position": "Position",
     "role": "Role",
     "edit": "edit"
+  },
+  "homepage": {
+    "out-standing-doctor": "Out standing doctor",
+    "outstanding-medical-facilities": "Outstanding medical facilities",
+    "handbook": "Handbook",
+    "more-info": "More info"
   }
 }
