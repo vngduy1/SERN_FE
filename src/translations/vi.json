@@ -50,5 +50,11 @@
     "position": "Chức vụ",
     "role": "Vai trò",
     "edit": "Sửa"
+  },
+  "homepage": {
+    "out-standing-doctor": "Bác sĩ nổi bật trong tuần",
+    "outstanding-medical-facilities": "Cơ sở y tế nổi bật",
+    "handbook": "Cẩm nang",
+    "more-info": "Xem thêm"
   }
 }

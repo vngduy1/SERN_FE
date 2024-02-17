@@ -6,6 +6,7 @@ import bv2 from "../../../assets/BV/bv2.svg";
 import bv3 from "../../../assets/BV/bv3.svg";
 import bv4 from "../../../assets/BV/bv4.svg";
 import bv5 from "../../../assets/BV/bv5.svg";
+import { FormattedMessage } from "react-intl";
 
 class MedicalFacility extends Component {
   changeLanguage = (language) => {
@@ -18,8 +19,12 @@ class MedicalFacility extends Component {
         <div className="section-share section-medical-facility">
           <div className="section-container">
             <div className="section-header">
-              <span className="title-section">Cơ sở y tế nổi bật</span>
-              <button className="btn-section">Xem thêm</button>
+              <span className="title-section">
+                <FormattedMessage id="homepage.outstanding-medical-facilities" />
+              </span>
+              <button className="btn-section">
+                <FormattedMessage id="homepage.more-info" />
+              </button>
             </div>
             <div className="section-body">
               <Slider {...this.props.settings}>
