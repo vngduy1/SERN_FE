@@ -1,6 +1,6 @@
 export const adminMenu = [
+  //Quan ly user
   {
-    //Quan ly user
     //hệ thống
     name: "menu.admin.manage-user",
     menus: [
@@ -14,7 +14,7 @@ export const adminMenu = [
       },
       {
         name: "menu.admin.manage-doctor",
-        link: "/system/user-manage",
+        link: "/system/manage-doctor",
       },
       {
         name: "menu.admin.manage-patient",
