@@ -49,12 +49,32 @@
     "phonenumber": "Số điện thoại",
     "position": "Chức vụ",
     "role": "Vai trò",
-    "edit": "Sửa"
+    "edit": "Sửa",
+    "action": "Hành động",
+    "manage": "Quản lý",
+    "update-image": "Tải ảnh"
   },
   "homepage": {
     "out-standing-doctor": "Bác sĩ nổi bật trong tuần",
     "outstanding-medical-facilities": "Cơ sở y tế nổi bật",
+    "specialty": "Chuyên Khoa",
     "handbook": "Cẩm nang",
     "more-info": "Xem thêm"
+  },
+  "handbook": {
+    "musculoskeletal": "Cơ xương khớp",
+    "nerve": "Thần kinh",
+    "digest": "Tiêu hóa",
+    "heart": "Cơ xương khớp",
+    "ears-and-nose": "Tai mũi hong",
+    "acupuncture": "Châm cứu",
+    "dermatology": "Da liễu",
+    "spine": "Cột sống"
+  },
+  "manage-doctor": {
+    "create-additional-doctor-information": "Tạo thêm thông tin bác sĩ",
+    "choose-a-doctor": "Chọn bác sĩ",
+    "introductory-information": "Thông tin giới thiệu",
+    "save-information": "Lưu thông tin"
   }
 }

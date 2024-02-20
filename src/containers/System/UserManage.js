@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import { FormattedMessage } from 'react-intl';
 import { connect } from "react-redux";
 import "./UserManage.scss";
 import {
@@ -11,6 +10,7 @@ import {
 import ModalUser from "./ModalUser";
 import ModalEditUser from "./ModalEditUser";
 import { emitter } from "../../utils/emitter";
+import { FormattedMessage } from "react-intl";
 
 class UserManage extends Component {
   constructor(props) {
@@ -134,25 +134,37 @@ class UserManage extends Component {
         )}
         <div className="container">
           <div className="mt-3">
-            <div className="title text-center">manage</div>
+            <div className="title text-center">
+              <FormattedMessage id="manage-user.manage" />
+            </div>
             <div className="">
               <button
                 className="btn btn-primary px-3"
                 onClick={() => this.handleAddNewUser()}
               >
                 <i className="fas fa-plus-circle m-2"></i>
-                Add new user
+                <FormattedMessage id="manage-user.add" />
               </button>
             </div>
             <table className="table table-striped mt-3" id="customers">
               <thead>
                 <tr>
                   <th scope="col">id</th>
-                  <th scope="col">email</th>
-                  <th scope="col">First Name</th>
-                  <th scope="col">Last Name</th>
-                  <th scope="col">Address</th>
-                  <th scope="col">Actions</th>
+                  <th scope="col">
+                    <FormattedMessage id="manage-user.email" />
+                  </th>
+                  <th scope="col">
+                    <FormattedMessage id="manage-user.firstName" />
+                  </th>
+                  <th scope="col">
+                    <FormattedMessage id="manage-user.lastName" />
+                  </th>
+                  <th scope="col">
+                    <FormattedMessage id="manage-user.address" />
+                  </th>
+                  <th scope="col">
+                    <FormattedMessage id="manage-user.action" />
+                  </th>
                 </tr>
               </thead>
               <tbody>
