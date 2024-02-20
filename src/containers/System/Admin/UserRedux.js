@@ -400,7 +400,8 @@ class UserRedux extends Component {
                       htmlFor="previewImg"
                       className="btn btn-outline-primary btn-preview"
                     >
-                      Tải ảnh <i className="fas fa-upload px-2"></i>
+                      <FormattedMessage id="manage-user.update-image" />
+                      <i className="fas fa-upload px-2"></i>
                     </label>
                   </div>
                   <div

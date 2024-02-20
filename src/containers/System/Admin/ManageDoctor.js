@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { FormattedMessage } from "react-intl";
 import "./ManageDoctor.scss";
 import * as actions from "../../../store/actions";
 import MarkdownIt from "markdown-it";
@@ -89,10 +90,14 @@ class ManageDoctor extends Component {
 
     return (
       <div className="manage-doctor-container">
-        <div className="manage-doctor-title">Tạo thêm thông tin bác sĩ</div>
+        <div className="manage-doctor-title">
+          <FormattedMessage id="manage-doctor.create-additional-doctor-information" />
+        </div>
         <div className="more-info">
           <div className="content-left form-group">
-            <label>Chọn bác sĩ</label>
+            <label>
+              <FormattedMessage id="manage-doctor.choose-a-doctor" />
+            </label>
             <Select
               value={selectedDoctor}
               onChange={this.handleChange}
@@ -100,10 +105,12 @@ class ManageDoctor extends Component {
             />
           </div>
           <div className="content-right">
-            <label className="">Thông tin giới thiệu</label>
+            <label className="">
+              <FormattedMessage id="manage-doctor.introductory-information" />
+            </label>
             <textarea
               className="form-control"
-              defaultValue={this.state.description}
+              value={this.state.description}
               rows={4}
               onChange={(event) => this.handleOnChangeDesc(event)}
             />
@@ -122,7 +129,7 @@ class ManageDoctor extends Component {
             this.handleSaveContentMarkdown();
           }}
         >
-          Lưu thông tin
+          <FormattedMessage id="manage-doctor.save-information" />
         </button>
       </div>
     );

@@ -35,6 +35,7 @@
 
 .section-share {
   &.section-specialty {
+    margin: 10px 0px;
     background-color: #f5f5f5;
   }
 
@@ -62,7 +63,8 @@
     }
 
     .good_doctor {
-      border: 1px solid orange;
+      width: 80% !important;
+      border: 1px solid rgb(125, 179, 220);
       margin: 0 8px;
       .good_doctor_img {
         height: 200px;
@@ -70,10 +72,23 @@
         margin: 20px 25%;
         padding: 20px 20px;
         border-radius: 50%;
-        border: 1px solid orange;
+        border: 1px solid rgb(125, 179, 220);
         background-size: cover;
         background-position: center center;
         background-repeat: no-repeat;
+        cursor: pointer;
+      }
+
+      .position {
+        font-size: 20px;
+        font-weight: 400;
+        text-align: center;
+      }
+
+      .good-doctor-title {
+        font-size: 16px;
+        font-weight: 400;
+        text-align: center;
       }
     }
   }
@@ -83,7 +98,7 @@
   height: 400px;
   background-color: #f5f5f5;
   .section-container {
-    margin: 60px 70px;
+    margin: 5px 70px;
     display: flex;
     flex-direction: column;
 

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { FormattedMessage } from "react-intl";
 import "./TableManageUser.scss";
 import * as actions from "../../../store/actions";
 import MarkdownIt from "markdown-it";
@@ -53,11 +54,21 @@ class TableManageUser extends Component {
         <table className="table table-striped mt-3" id="tableManageUser">
           <thead>
             <tr>
-              <th scope="col">email</th>
-              <th scope="col">First Name</th>
-              <th scope="col">Last Name</th>
-              <th scope="col">Address</th>
-              <th scope="col">Actions</th>
+              <th scope="col">
+                <FormattedMessage id="manage-user.email" />
+              </th>
+              <th scope="col">
+                <FormattedMessage id="manage-user.firstName" />
+              </th>
+              <th scope="col">
+                <FormattedMessage id="manage-user.lastName" />
+              </th>
+              <th scope="col">
+                <FormattedMessage id="manage-user.address" />
+              </th>
+              <th scope="col">
+                <FormattedMessage id="manage-user.action" />
+              </th>
             </tr>
           </thead>
           <tbody>

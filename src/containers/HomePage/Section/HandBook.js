@@ -39,6 +39,14 @@ class HandBook extends Component {
                   <div className="bg-image"></div>
                   <div>Cơ xương khớp 4</div>
                 </div>
+                <div className="specialty-customize">
+                  <div className="bg-image"></div>
+                  <div>Cơ xương khớp 5</div>
+                </div>
+                <div className="specialty-customize">
+                  <div className="bg-image"></div>
+                  <div>Cơ xương khớp 6</div>
+                </div>
               </Slider>
             </div>
           </div>

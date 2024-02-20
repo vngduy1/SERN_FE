@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { FormattedMessage } from 'react-intl';
+import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import { emitter } from "../../utils/emitter";
@@ -83,7 +83,9 @@ class ModalUser extends Component {
         <ModalBody>
           <div className="modal-user-body">
             <div className="input-container mt-2">
-              <label>Email</label>
+              <label>
+                <FormattedMessage id="manage-user.email" />
+              </label>
               <input
                 type="text"
                 onChange={(e) => this.handleOnChangeInput(e, "email")}
@@ -91,7 +93,9 @@ class ModalUser extends Component {
               />
             </div>
             <div className="input-container mt-2">
-              <label>Password</label>
+              <label>
+                <FormattedMessage id="manage-user.firstName" />
+              </label>
               <input
                 type="password"
                 onChange={(e) => this.handleOnChangeInput(e, "password")}
@@ -99,7 +103,9 @@ class ModalUser extends Component {
               />
             </div>
             <div className="input-container mt-2">
-              <label>First name</label>
+              <label>
+                <FormattedMessage id="manage-user.lastName" />
+              </label>
               <input
                 type="text"
                 onChange={(e) => this.handleOnChangeInput(e, "firstName")}
@@ -107,7 +113,9 @@ class ModalUser extends Component {
               />
             </div>
             <div className="input-container mt-2">
-              <label>Last name</label>
+              <label>
+                <FormattedMessage id="manage-user.firstName" />
+              </label>
               <input
                 type="text"
                 onChange={(e) => this.handleOnChangeInput(e, "lastName")}
@@ -115,7 +123,9 @@ class ModalUser extends Component {
               />
             </div>
             <div className="input-container mt-2 max-width-input">
-              <label>Address</label>
+              <label>
+                <FormattedMessage id="manage-user.address" />
+              </label>
               <input
                 type="text"
                 onChange={(e) => this.handleOnChangeInput(e, "address")}
@@ -141,7 +151,7 @@ class ModalUser extends Component {
             }}
             className="px-3 btn-btn-save"
           >
-            Add New
+            <FormattedMessage id="manage-user.add" />
           </Button>
         </ModalFooter>
       </Modal>

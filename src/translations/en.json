@@ -49,12 +49,32 @@
     "phonenumber": "PhoneNumber",
     "position": "Position",
     "role": "Role",
-    "edit": "edit"
+    "edit": "edit",
+    "action": "action",
+    "manage": "Manage",
+    "update-image": "Update image"
   },
   "homepage": {
     "out-standing-doctor": "Out standing doctor",
     "outstanding-medical-facilities": "Outstanding medical facilities",
     "handbook": "Handbook",
-    "more-info": "More info"
+    "more-info": "More info",
+    "specialty": "Specialty"
+  },
+  "specialist": {
+    "musculoskeletal": "Musculoskeletal",
+    "nerve": "Nerve",
+    "digest": "Digest",
+    "heart": "Heart",
+    "ears-and-nose": "Ears And Nose",
+    "acupuncture": "Acupuncture",
+    "dermatology": "Dermatology",
+    "spine": "Spine"
+  },
+  "manage-doctor": {
+    "create-additional-doctor-information": "Create additional doctor information",
+    "choose-a-doctor": "Choose a doctor",
+    "introductory-information": "introductory information",
+    "save-information": "Save information"
   }
 }

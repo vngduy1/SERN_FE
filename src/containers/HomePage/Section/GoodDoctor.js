@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import * as actions from "../../../store/actions";
 import { LANGUAGES } from "../../../utils";
 import { FormattedMessage } from "react-intl";
+import { withRouter } from "react-router";
 
 class GoodDoctor extends Component {
   constructor(props) {
@@ -30,6 +31,11 @@ class GoodDoctor extends Component {
     this.props.changeLanguageAppRedux(language);
   };
 
+  handleViewDetailDoctor = (doctor) => {
+    if (this.props.history) {
+      this.props.history.push(`/detail-doctor/${doctor.id}`);
+    }
+  };
   render() {
     let arrDoctors = this.state.arrDoctors;
     let { language } = this.props;
@@ -57,20 +63,24 @@ class GoodDoctor extends Component {
                       );
                     }
                     let nameVi = `${item.positionData.valueVi}, ${item.firstName} ${item.lastName}`;
-                    let nameEn = `${item.positionData.valueEn}, ${item.firstName} ${item.lastName}`;
+                    let nameEn = `${item.positionData.valueEn}, ${item.lastName} ${item.firstName}`;
                     return (
-                      <div className="good_doctor" key={index}>
+                      <div
+                        className="good_doctor"
+                        key={index}
+                        onClick={() => this.handleViewDetailDoctor(item)}
+                      >
                         <div
                           className="good_doctor_img"
                           style={{
                             backgroundImage: `url(${imageBase64})`,
                           }}
                         ></div>
-                        <div className="position text-center">
-                          <div>
+                        <div>
+                          <div className="position">
                             {language === LANGUAGES.VI ? nameVi : nameEn}
                           </div>
-                          <div>Cơ xương khớp</div>
+                          <div className="good-doctor-title">Cơ xương khớp</div>
                         </div>
                       </div>
                     );
@@ -98,4 +108,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(GoodDoctor);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(GoodDoctor)
+);
