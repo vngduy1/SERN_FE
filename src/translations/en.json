@@ -34,6 +34,9 @@
       "manage-specialty": "Manage specialty",
       "handbook": "Handbook",
       "manage-handbook": "Manage handbook"
+    },
+    "doctor": {
+      "manage-schedule": "Manage doctor schedule"
     }
   },
   "manage-user": {
@@ -75,6 +78,7 @@
     "create-additional-doctor-information": "Create additional doctor information",
     "choose-a-doctor": "Choose a doctor",
     "introductory-information": "introductory information",
-    "save-information": "Save information"
+    "save-information": "Save information",
+    "edit-information": "Edit information"
   }
 }

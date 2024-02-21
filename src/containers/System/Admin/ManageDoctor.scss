@@ -22,6 +22,22 @@
     }
   }
 
+  .edit-content-doctor {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+    padding: 5px;
+    color: rgb(66, 171, 213);
+    background-color: rgb(231, 241, 93);
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
   .save-content-doctor {
     margin-top: 20px;
     margin-bottom: 30px;

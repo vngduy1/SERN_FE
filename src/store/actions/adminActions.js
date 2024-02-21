@@ -258,7 +258,7 @@ export const saveDetailDoctors = (data) => {
   return async (dispatch, getState) => {
     try {
       let res = await saveDetailDoctor(data);
-      if (res && res.errCode === 0) {
+      if (res && +res.errCode === 0) {
         toast.success("Doctor info success");
         dispatch(saveDetailDoctorsSuccess());
       } else {
