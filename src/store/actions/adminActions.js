@@ -272,3 +272,28 @@ export const saveDetailDoctors = (data) => {
     }
   };
 };
+
+export const fetchAllCodeScheduleTimeSuccess = (res) => ({
+  type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_SUCCESS,
+  dataTime: res.data,
+});
+
+export const fetchAllCodeScheduleTimeFailed = () => ({
+  type: actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_FAILED,
+});
+
+export const fetchAllCodeScheduleTime = () => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await getAllCodeService("TIME");
+      if (res && res.errCode === 0) {
+        dispatch(fetchAllCodeScheduleTimeSuccess(res));
+      } else {
+        dispatch(fetchAllCodeScheduleTimeFailed());
+      }
+    } catch (error) {
+      console.log("fetchAllCodeScheduleTime", error);
+      dispatch(fetchAllCodeScheduleTimeFailed());
+    }
+  };
+};
