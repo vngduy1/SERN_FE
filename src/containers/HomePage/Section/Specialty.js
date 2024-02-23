@@ -25,19 +25,51 @@ class Specialty extends Component {
               <Slider {...this.props.settings}>
                 <div className="specialty-customize">
                   <div className="bg-image"></div>
-                  <div>Cơ xương khớp 1</div>
+                  <div className="bg-image-title">
+                    <FormattedMessage id="homepage.musculoskeletal" /> 1
+                  </div>
                 </div>
                 <div className="specialty-customize">
                   <div className="bg-image"></div>
-                  <div>Cơ xương khớp 2</div>
+                  <div className="bg-image-title">
+                    <FormattedMessage id="homepage.musculoskeletal" /> 2
+                  </div>
                 </div>
                 <div className="specialty-customize">
                   <div className="bg-image"></div>
-                  <div>Cơ xương khớp 3</div>
+                  <div className="bg-image-title">
+                    <FormattedMessage id="homepage.musculoskeletal" /> 3
+                  </div>
                 </div>
                 <div className="specialty-customize">
                   <div className="bg-image"></div>
-                  <div>Cơ xương khớp 4</div>
+                  <div className="bg-image-title">
+                    <FormattedMessage id="homepage.musculoskeletal" /> 4
+                  </div>
+                </div>
+                <div className="specialty-customize">
+                  <div className="bg-image"></div>
+                  <div className="bg-image-title">
+                    <FormattedMessage id="homepage.musculoskeletal" /> 5
+                  </div>
+                </div>
+                <div className="specialty-customize">
+                  <div className="bg-image"></div>
+                  <div className="bg-image-title">
+                    <FormattedMessage id="homepage.musculoskeletal" /> 6
+                  </div>
+                </div>
+                <div className="specialty-customize">
+                  <div className="bg-image"></div>
+                  <div className="bg-image-title">
+                    <FormattedMessage id="homepage.musculoskeletal" /> 7
+                  </div>
+                </div>
+                <div className="specialty-customize">
+                  <div className="bg-image"></div>
+                  <div className="bg-image-title">
+                    <FormattedMessage id="homepage.musculoskeletal" /> 8
+                  </div>
                 </div>
               </Slider>
             </div>
