@@ -36,12 +36,13 @@ class GoodDoctor extends Component {
       this.props.history.push(`/detail-doctor/${doctor.id}`);
     }
   };
+
   render() {
     let arrDoctors = this.state.arrDoctors;
     let { language } = this.props;
     return (
       <>
-        <div className="section-share section-medical-facility">
+        <div className="section-share section-good-doctor">
           <div className="section-container">
             <div className="section-header">
               <span className="title-section">

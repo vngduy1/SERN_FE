@@ -62,7 +62,9 @@
     "outstanding-medical-facilities": "Outstanding medical facilities",
     "handbook": "Handbook",
     "more-info": "More info",
-    "specialty": "Specialty"
+    "specialty": "Specialty",
+    "health-system": "Health system",
+    "musculoskeletal": "Musculoskeletal"
   },
   "specialist": {
     "musculoskeletal": "Musculoskeletal",

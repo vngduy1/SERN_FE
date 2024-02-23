@@ -5,11 +5,12 @@ import "./ManageSchedule.scss";
 import { FormattedMessage } from "react-intl";
 import Select from "react-select";
 import * as actions from "../../../store/actions";
-import { LANGUAGES, dateFormat } from "../../../utils";
+import { LANGUAGES } from "../../../utils";
 import DatePicker from "../../../components/Input/DatePicker";
 import { toast } from "react-toastify";
 import _ from "lodash";
-import moment from "moment";
+// import moment from "moment";
+import { saveBulkScheduleDoctor } from "../../../services/userService";
 
 class ManageSchedule extends Component {
   constructor(props) {
@@ -90,7 +91,7 @@ class ManageSchedule extends Component {
     }
   };
 
-  handleSaveSchedule = () => {
+  handleSaveSchedule = async () => {
     let { rangeTime, selectedDoctor, currentDate } = this.state;
     let result = [];
 
@@ -101,7 +102,7 @@ class ManageSchedule extends Component {
       toast.error("Invalid selected doctor! ");
       return;
     }
-    let formateDate = moment(currentDate).format(dateFormat.SEND_TO_SERVER);
+    let formateDate = new Date(currentDate).getTime();
 
     if (rangeTime && rangeTime.length > 0) {
       let selectedTime = rangeTime.filter((item) => item.isSelected === true);
@@ -111,7 +112,7 @@ class ManageSchedule extends Component {
           let object = {};
           object.doctorId = selectedDoctor.value;
           object.date = formateDate;
-          object.time = schedule.keyMap;
+          object.timeType = schedule.keyMap;
           return result.push(object);
         });
       } else {
@@ -119,7 +120,12 @@ class ManageSchedule extends Component {
         return;
       }
     }
-    console.log(result);
+    let res = await saveBulkScheduleDoctor({
+      arrSchedule: result,
+      doctorId: selectedDoctor.value,
+      date: formateDate,
+    });
+    console.log("check res", res);
   };
 
   render() {
