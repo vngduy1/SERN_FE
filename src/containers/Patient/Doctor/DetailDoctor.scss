@@ -34,11 +34,10 @@
   .schedule-doctor {
     margin: 0 100px;
     display: flex;
-    height: 200px;
-    border: 1px solid red;
+    min-height: 200px;
+    max-height: auto;
     .content-left {
       width: 50%;
-      border-right: 1px solid green;
     }
     .content-right {
       width: 50%;
