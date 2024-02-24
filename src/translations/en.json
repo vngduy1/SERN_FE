@@ -81,7 +81,13 @@
     "choose-a-doctor": "Choose a doctor",
     "introductory-information": "introductory information",
     "save-information": "Save information",
-    "edit-information": "Edit information"
+    "edit-information": "Edit information",
+    "price": "Price",
+    "payment": "Payment",
+    "province": "Province",
+    "nameClinic": "Name clinic",
+    "addressClinic": "clinic address",
+    "note": "note"
   },
   "manage-schedule": {
     "title": "Manage doctor's medical examination plans",
