@@ -138,20 +138,55 @@ class ManageDoctor extends Component {
     this.setState({
       ...stateCopy,
     });
-    console.log(selectedDoctor, stateName);
   };
 
   handleChangeSelect = async (selectedDoctor) => {
     this.setState({ selectedDoctor });
+    let { listPayment, listPrice, listProvince } = this.state;
 
     let response = await getDetailInfoDoctor(selectedDoctor.value);
     if (response && response.errCode === 0 && response.data.Markdown) {
       let markdown = response.data.Markdown;
+
+      let addressClinic = "",
+        nameClinic = "",
+        note = "",
+        paymentId = "",
+        priceId = "",
+        provinceId = "",
+        selectedPrice = "",
+        selectedPayment = "",
+        selectedProvince = "";
+
+      if (response.data.Doctor_Info) {
+        addressClinic = response.data.Doctor_Info.addressClinic;
+        nameClinic = response.data.Doctor_Info.nameClinic;
+        note = response.data.Doctor_Info.note;
+        paymentId = response.data.Doctor_Info.paymentId;
+        priceId = response.data.Doctor_Info.priceId;
+        provinceId = response.data.Doctor_Info.provinceId;
+
+        selectedPrice = listPrice.find((item) => {
+          return item && item.value === priceId;
+        });
+        selectedPayment = listPayment.find((item) => {
+          return item && item.value === paymentId;
+        });
+        selectedProvince = listProvince.find((item) => {
+          return item && item.value === provinceId;
+        });
+      }
       this.setState({
         contentHTML: markdown.contentHTML,
         contentMarkdown: markdown.contentMarkdown,
         description: markdown.description,
         hasOldData: true,
+        addressClinic: addressClinic,
+        nameClinic: nameClinic,
+        note: note,
+        selectedPrice: selectedPrice,
+        selectedPayment: selectedPayment,
+        selectedProvince: selectedProvince,
       });
     } else {
       this.setState({
@@ -159,9 +194,11 @@ class ManageDoctor extends Component {
         contentMarkdown: "",
         description: "",
         hasOldData: false,
+        addressClinic: "",
+        nameClinic: "",
+        note: "",
       });
     }
-    console.log("check response doctor", response);
   };
 
   handleOnChangeText = (event, id) => {

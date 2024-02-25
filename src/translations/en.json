@@ -101,6 +101,13 @@
       "no-schedule": "There are currently no medical examinations",
       "choose": "Choose ",
       "book-free": " and book (free)"
+    },
+    "extra-info-doctor": {
+      "address-clinic": "Address clinic",
+      "price": "Price",
+      "more-price": "More info",
+      "payment": "Patients can pay costs in form",
+      "hide-price": "Hide price list"
     }
   }
 }
