@@ -1,0 +1,91 @@
+.doctor-extra-info-container {
+  height: auto;
+  .content-up {
+    padding-left: 10px;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 1px solid gray;
+    .text-address {
+      text-transform: uppercase;
+    }
+
+    .nameClinic {
+      font-weight: 600;
+      padding: 5px 0;
+    }
+
+    .detail-address {
+      font-weight: 500;
+      text-transform: uppercase;
+      padding-bottom: 5px;
+    }
+  }
+
+  .content-down {
+    .title-up {
+      span,
+      i {
+        cursor: pointer;
+        color: #45c3d2;
+        padding-left: 5px;
+
+        &:hover {
+          color: #ffc107;
+        }
+      }
+    }
+
+    .title-down {
+      padding-left: 10px;
+      .title-price {
+        text-transform: uppercase;
+        color: #45c3d2;
+        margin-bottom: 10px;
+      }
+
+      .detail-info {
+        padding: 4px;
+        background-color: #f8f8f8;
+        border: 1px solid #ddd;
+        .detail-price {
+          border-bottom: 1px solid #ddd;
+          display: flex;
+          justify-content: space-between;
+          padding-bottom: 5px;
+          font-size: 15px;
+          font-weight: 500;
+        }
+        .note {
+          font-size: 13px;
+          font-weight: 400;
+        }
+      }
+
+      .payment {
+        border: 1px solid #ddd;
+        padding: 4px;
+        background-color: #eee;
+
+        span {
+          padding-left: 5px;
+        }
+      }
+
+      .hide-price {
+        margin-top: 10px;
+        i {
+          padding-left: 3px;
+        }
+        span,
+        i {
+          cursor: pointer;
+          color: #45c3d2;
+
+          &:hover {
+            color: #ffc107;
+          }
+        }
+      }
+    }
+  }
+}

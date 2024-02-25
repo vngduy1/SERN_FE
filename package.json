@@ -63,6 +63,7 @@
   "devDependencies": {
     "markdown-it": "^12.3.2",
     "prettier": "^3.2.5",
-    "react-markdown-editor-lite": "^1.3.0"
+    "react-markdown-editor-lite": "^1.3.0",
+    "react-number-format": "^4.9.4"
   }
 }
