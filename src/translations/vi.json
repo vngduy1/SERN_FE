@@ -108,6 +108,20 @@
       "more-price": "Xem chi tiết",
       "payment": "Người bệnh có thể thanh toán chi phí bằng hình thức",
       "hide-price": "Ẩn bảng giá"
+    },
+    "booking": {
+      "booking-info": "Thông tin đặt lịch khám bệnh",
+      "set": "Đặt cho ai",
+      "for-yourself": "Cho bản thân",
+      "others": "Cho người khác",
+      "name": "Họ và tên bệnh nhân (bắt buộc)",
+      "name-text": "Hãy ghi rõ Họ Và Tên, viết hoa những chữ cái đầu tiên, ví dụ: Trần Văn Phú",
+      "phone": "Số điện thoại liên hệ (bắt buộc)",
+      "address": "Địa chỉ liên hệ (bắt buộc)",
+      "gender": "Giới tính",
+      "reason-for-examination": "Lý do khám",
+      "confirm": "Xác nhận",
+      "cancel": "Hủy"
     }
   }
 }
