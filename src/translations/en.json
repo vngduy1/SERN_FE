@@ -108,6 +108,20 @@
       "more-price": "More info",
       "payment": "Patients can pay costs in form",
       "hide-price": "Hide price list"
+    },
+    "booking": {
+      "booking-info": "Information on scheduling medical examinations",
+      "set": "Set it for someone",
+      "for-yourself": "For yourself",
+      "others": "Others",
+      "name": "Patient's full name (required)",
+      "name-text": "Please write your Full Name clearly, capitalizing the first letters, for example: Phu Tran Van",
+      "phone": "Contact phone number (required)",
+      "address": "Contact address (required)",
+      "gender": "Gender",
+      "reason-for-examination": "Reason for examination",
+      "confirm": "Confirm",
+      "cancel": "Cancel"
     }
   }
 }

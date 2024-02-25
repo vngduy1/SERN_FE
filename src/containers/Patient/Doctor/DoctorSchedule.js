@@ -6,6 +6,7 @@ import { FormattedMessage } from "react-intl";
 import "moment/locale/vi";
 import { LANGUAGES } from "../../../utils";
 import { getScheduleDoctorByDate } from "../../../services/userService";
+import BookingModal from "./Modal/BookingModal";
 
 class DoctorSchedule extends Component {
   constructor(props) {
@@ -13,6 +14,8 @@ class DoctorSchedule extends Component {
     this.state = {
       allDays: [],
       allAvailableTime: [],
+      isOpenModalBooking: false,
+      dataScheduleTimeModal: {},
     };
   }
 
@@ -92,69 +95,95 @@ class DoctorSchedule extends Component {
     }
   };
 
+  handleClickScheduleTime = (time) => {
+    this.setState({
+      isOpenModalBooking: true,
+      dataScheduleTimeModal: time,
+    });
+  };
+
+  closeBookingModal = () => {
+    this.setState({
+      isOpenModalBooking: false,
+    });
+  };
+
   render() {
-    const { allDays, allAvailableTime } = this.state;
+    const {
+      allDays,
+      allAvailableTime,
+      isOpenModalBooking,
+      dataScheduleTimeModal,
+    } = this.state;
     const { language } = this.props;
     return (
-      <div className="doctor-schedule-container">
-        <div className="all-schedule">
-          <select onChange={(event) => this.handleOnchangeSelect(event)}>
-            {allDays &&
-              allDays.length > 0 &&
-              allDays.map((item, index) => {
-                return (
-                  <option value={item.value} key={index}>
-                    {item.label}
-                  </option>
-                );
-              })}
-          </select>
-        </div>
-        <div className="all-available-time">
-          <div className="text-calendar">
-            <i className="fas fa-calendar-alt">
-              <span>
-                <FormattedMessage id="patient.detail-doctor.schedule" />
-              </span>
-            </i>
+      <>
+        <div className="doctor-schedule-container">
+          <div className="all-schedule">
+            <select onChange={(event) => this.handleOnchangeSelect(event)}>
+              {allDays &&
+                allDays.length > 0 &&
+                allDays.map((item, index) => {
+                  return (
+                    <option value={item.value} key={index}>
+                      {item.label}
+                    </option>
+                  );
+                })}
+            </select>
           </div>
-          <div className="time-content">
-            {allAvailableTime && allAvailableTime.length > 0 ? (
-              <>
-                <div className="time-content-btn">
-                  {allAvailableTime.map((item, index) => {
-                    let timeDisplay =
-                      language === LANGUAGES.VI
-                        ? item.timeTypeData.valueVi
-                        : item.timeTypeData.valueEn;
-                    return (
-                      <button
-                        key={index}
-                        className={
-                          language === LANGUAGES.VI ? "btn-vi" : "btn-en"
-                        }
-                      >
-                        {timeDisplay}
-                      </button>
-                    );
-                  })}
+          <div className="all-available-time">
+            <div className="text-calendar">
+              <i className="fas fa-calendar-alt">
+                <span>
+                  <FormattedMessage id="patient.detail-doctor.schedule" />
+                </span>
+              </i>
+            </div>
+            <div className="time-content">
+              {allAvailableTime && allAvailableTime.length > 0 ? (
+                <>
+                  <div className="time-content-btn">
+                    {allAvailableTime.map((item, index) => {
+                      let timeDisplay =
+                        language === LANGUAGES.VI
+                          ? item.timeTypeData.valueVi
+                          : item.timeTypeData.valueEn;
+                      return (
+                        <button
+                          key={index}
+                          className={
+                            language === LANGUAGES.VI ? "btn-vi" : "btn-en"
+                          }
+                          onClick={() => this.handleClickScheduleTime(item)}
+                        >
+                          {timeDisplay}
+                        </button>
+                      );
+                    })}
+                  </div>
+                  <div className="book-free">
+                    <span>
+                      <FormattedMessage id="patient.detail-doctor.choose" />
+                      <i className="fas fa-hand-pointer"></i>
+                      <FormattedMessage id="patient.detail-doctor.book-free" />
+                    </span>
+                  </div>
+                </>
+              ) : (
+                <div className="no-schedule">
+                  <FormattedMessage id="patient.detail-doctor.no-schedule" />
                 </div>
-                <div className="book-free">
-                  <span>
-                    <FormattedMessage id="patient.detail-doctor.choose" />
-                    <i className="fas fa-hand-pointer"></i>
-                    <FormattedMessage id="patient.detail-doctor.book-free" />
-                  </span>
-                </div>
-              </>
-            ) : (
-              <div className="no-schedule">
-                <FormattedMessage id="patient.detail-doctor.no-schedule" />
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
-      </div>
+        <BookingModal
+          isOpen={isOpenModalBooking}
+          isClose={this.closeBookingModal}
+          dataTime={dataScheduleTimeModal}
+        />
+      </>
     );
   }
 }
