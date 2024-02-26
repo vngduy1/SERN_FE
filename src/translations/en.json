@@ -119,9 +119,11 @@
       "phone": "Contact phone number (required)",
       "address": "Contact address (required)",
       "gender": "Gender",
+      "birthday": "Birthday",
       "reason-for-examination": "Reason for examination",
       "confirm": "Confirm",
-      "cancel": "Cancel"
+      "cancel": "Cancel",
+      "free": "Free appointment"
     }
   }
 }
