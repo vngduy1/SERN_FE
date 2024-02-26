@@ -119,9 +119,11 @@
       "phone": "Số điện thoại liên hệ (bắt buộc)",
       "address": "Địa chỉ liên hệ (bắt buộc)",
       "gender": "Giới tính",
+      "birthday": "Ngày sinh",
       "reason-for-examination": "Lý do khám",
       "confirm": "Xác nhận",
-      "cancel": "Hủy"
+      "cancel": "Hủy",
+      "free": "Miễn phí đặt lịch"
     }
   }
 }
