@@ -43,7 +43,6 @@ class VerifyEmail extends Component {
   componentDidUpdate(prevProps, prevState, snapshot) {}
 
   render() {
-    console.log(this.state);
     let { statusVerify, errCode } = this.state;
     return (
       <>
