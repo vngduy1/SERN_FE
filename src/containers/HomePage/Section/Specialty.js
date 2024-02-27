@@ -2,13 +2,34 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Slider from "react-slick";
 import { FormattedMessage } from "react-intl";
+import { getSpecialty } from "../../../services/userService";
 
 class Specialty extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataSpecialty: {},
+    };
+  }
+
+  async componentDidMount() {
+    let res = await getSpecialty();
+    console.log(res);
+    if (res && res.errCode === 0) {
+      this.setState({
+        dataSpecialty: res.data ? res.data : [],
+      });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {}
+
   changeLanguage = (language) => {
     this.props.changeLanguageAppRedux(language);
   };
 
   render() {
+    let { dataSpecialty } = this.state;
     return (
       <>
         <div className="section-share section-specialty">
@@ -23,54 +44,22 @@ class Specialty extends Component {
             </div>
             <div className="section-body">
               <Slider {...this.props.settings}>
-                <div className="specialty-customize">
-                  <div className="bg-image"></div>
-                  <div className="bg-image-title">
-                    <FormattedMessage id="homepage.musculoskeletal" /> 1
-                  </div>
-                </div>
-                <div className="specialty-customize">
-                  <div className="bg-image"></div>
-                  <div className="bg-image-title">
-                    <FormattedMessage id="homepage.musculoskeletal" /> 2
-                  </div>
-                </div>
-                <div className="specialty-customize">
-                  <div className="bg-image"></div>
-                  <div className="bg-image-title">
-                    <FormattedMessage id="homepage.musculoskeletal" /> 3
-                  </div>
-                </div>
-                <div className="specialty-customize">
-                  <div className="bg-image"></div>
-                  <div className="bg-image-title">
-                    <FormattedMessage id="homepage.musculoskeletal" /> 4
-                  </div>
-                </div>
-                <div className="specialty-customize">
-                  <div className="bg-image"></div>
-                  <div className="bg-image-title">
-                    <FormattedMessage id="homepage.musculoskeletal" /> 5
-                  </div>
-                </div>
-                <div className="specialty-customize">
-                  <div className="bg-image"></div>
-                  <div className="bg-image-title">
-                    <FormattedMessage id="homepage.musculoskeletal" /> 6
-                  </div>
-                </div>
-                <div className="specialty-customize">
-                  <div className="bg-image"></div>
-                  <div className="bg-image-title">
-                    <FormattedMessage id="homepage.musculoskeletal" /> 7
-                  </div>
-                </div>
-                <div className="specialty-customize">
-                  <div className="bg-image"></div>
-                  <div className="bg-image-title">
-                    <FormattedMessage id="homepage.musculoskeletal" /> 8
-                  </div>
-                </div>
+                {dataSpecialty &&
+                  dataSpecialty.length > 0 &&
+                  dataSpecialty.map((item, index) => {
+                    return (
+                      <div className="specialty-customize" key={index}>
+                        <div
+                          className="bg-image-specialty"
+                          style={{ backgroundImage: `url(${item.image})` }}
+                        ></div>
+                        <div className="bg-image-title">
+                          {/* <FormattedMessage id="homepage.musculoskeletal" /> */}
+                          {item.name}
+                        </div>
+                      </div>
+                    );
+                  })}
               </Slider>
             </div>
           </div>

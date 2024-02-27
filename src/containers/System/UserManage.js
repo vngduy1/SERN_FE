@@ -99,7 +99,6 @@ class UserManage extends Component {
   };
 
   doEditUser = async (user) => {
-    console.log(user);
     try {
       let response = await editUserService(user);
       if (response && response.errCode === 0) {
