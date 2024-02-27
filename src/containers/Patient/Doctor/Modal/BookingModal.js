@@ -147,14 +147,12 @@ class BookingModal extends Component {
       timeString: timeString,
       doctorName: doctorName,
     });
-    console.log(res);
     if (res && res.errCode === 0) {
       toast.success("Booking a successFully");
       this.props.isClose();
     } else {
       toast.error("Booking error!!!");
     }
-    console.log(this.state);
   };
 
   render() {
@@ -163,8 +161,6 @@ class BookingModal extends Component {
     if (dataTime && !_.isEmpty(dataTime)) {
       doctorId = dataTime.doctorId;
     }
-
-    console.log(dataTime);
     return (
       <Modal
         isOpen={isOpen}
