@@ -162,7 +162,7 @@ class ManageDoctor extends Component {
 
   handleChangeSelect = async (selectedDoctor) => {
     this.setState({ selectedDoctor });
-    let { listPayment, listPrice, listProvince } = this.state;
+    let { listPayment, listPrice, listProvince, listSpecialty } = this.state;
 
     let response = await getDetailInfoDoctor(selectedDoctor.value);
     if (response && response.errCode === 0 && response.data.Markdown) {
@@ -174,9 +174,11 @@ class ManageDoctor extends Component {
         paymentId = "",
         priceId = "",
         provinceId = "",
+        specialtyId = "",
         selectedPrice = "",
         selectedPayment = "",
-        selectedProvince = "";
+        selectedProvince = "",
+        selectedSpecialty = "";
 
       if (response.data.Doctor_Info) {
         addressClinic = response.data.Doctor_Info.addressClinic;
@@ -185,6 +187,7 @@ class ManageDoctor extends Component {
         paymentId = response.data.Doctor_Info.paymentId;
         priceId = response.data.Doctor_Info.priceId;
         provinceId = response.data.Doctor_Info.provinceId;
+        specialtyId = response.data.Doctor_Info.specialtyId;
 
         selectedPrice = listPrice.find((item) => {
           return item && item.value === priceId;
@@ -194,6 +197,10 @@ class ManageDoctor extends Component {
         });
         selectedProvince = listProvince.find((item) => {
           return item && item.value === provinceId;
+        });
+
+        selectedSpecialty = listSpecialty.find((item) => {
+          return item && item.value === specialtyId;
         });
       }
       this.setState({
@@ -207,6 +214,7 @@ class ManageDoctor extends Component {
         selectedPrice: selectedPrice,
         selectedPayment: selectedPayment,
         selectedProvince: selectedProvince,
+        selectedSpecialty: selectedSpecialty,
       });
     } else {
       this.setState({
@@ -217,6 +225,10 @@ class ManageDoctor extends Component {
         addressClinic: "",
         nameClinic: "",
         note: "",
+        selectedPrice: "",
+        selectedPayment: "",
+        selectedProvince: "",
+        selectedSpecialty: "",
       });
     }
   };

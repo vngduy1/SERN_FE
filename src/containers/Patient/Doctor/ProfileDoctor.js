@@ -7,6 +7,7 @@ import { getProfileDoctorById } from "../../../services/userService";
 import NumberFormat from "react-number-format";
 import _ from "lodash";
 import moment from "moment";
+import { Link } from "react-router-dom";
 
 class ProfileDoctor extends Component {
   constructor(props) {
@@ -75,7 +76,14 @@ class ProfileDoctor extends Component {
   };
 
   render() {
-    let { language, isShowDescriptionDoctor, dataTime } = this.props;
+    let {
+      language,
+      isShowDescriptionDoctor,
+      dataTime,
+      isShowLinkDetail,
+      isShowPrice,
+      doctorId,
+    } = this.props;
     let { dataProfile } = this.state;
     let nameVi = "";
     let nameEn = "";
@@ -112,25 +120,37 @@ class ProfileDoctor extends Component {
             </div>
           </div>
         </div>
-        <div className="price">
-          <span>
-            <FormattedMessage id="patient.extra-info-doctor.price" /> :
-          </span>
-          {dataProfile && dataProfile.Doctor_Info ? (
-            <NumberFormat
-              value={
-                language === LANGUAGES.VI
-                  ? dataProfile.Doctor_Info.priceTypeData.valueVi
-                  : dataProfile.Doctor_Info.priceTypeData.valueEn
-              }
-              displayType="text"
-              thousandSeparator=","
-              suffix={language === LANGUAGES.VI ? "VND" : "$"}
-            />
-          ) : (
-            ""
-          )}
-        </div>
+        {isShowLinkDetail === true && (
+          <div className="view-detail-doctor">
+            <Link
+              className="view-detail-doctor-link"
+              to={`/detail-doctor/${doctorId}`}
+            >
+              Xem thêm
+            </Link>
+          </div>
+        )}
+        {isShowPrice === true && (
+          <div className="price">
+            <span>
+              <FormattedMessage id="patient.extra-info-doctor.price" /> :
+            </span>
+            {dataProfile && dataProfile.Doctor_Info ? (
+              <NumberFormat
+                value={
+                  language === LANGUAGES.VI
+                    ? dataProfile.Doctor_Info.priceTypeData.valueVi
+                    : dataProfile.Doctor_Info.priceTypeData.valueEn
+                }
+                displayType="text"
+                thousandSeparator=","
+                suffix={language === LANGUAGES.VI ? "VND" : "$"}
+              />
+            ) : (
+              ""
+            )}
+          </div>
+        )}
       </div>
     );
   }
