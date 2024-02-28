@@ -20,7 +20,6 @@ class HomeFooter extends Component {
               More info
             </a>
           </p>
-          HomeFooter
         </div>
       </>
     );

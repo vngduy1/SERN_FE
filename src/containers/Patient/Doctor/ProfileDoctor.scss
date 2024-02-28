@@ -1,4 +1,6 @@
 .profile-doctor-container {
+  display: flex;
+  flex-direction: column;
   .intro-doctor {
     margin: 10px;
     display: flex;
@@ -28,6 +30,14 @@
       }
     }
   }
+
+  .view-detail-doctor {
+    .view-detail-doctor-link {
+      text-decoration: none;
+      padding-left: 20px;
+    }
+  }
+
   .price {
     padding-bottom: 5px;
     border-bottom: 1px solid gray;
