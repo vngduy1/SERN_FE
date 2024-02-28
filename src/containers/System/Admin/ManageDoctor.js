@@ -92,6 +92,14 @@ class ManageDoctor extends Component {
           return result.push(object);
         });
       }
+      if (type === "CLINIC") {
+        inputData.map((item, index) => {
+          let object = {};
+          object.label = item.name;
+          object.value = item.id;
+          return result.push(object);
+        });
+      }
     }
 
     return result;
@@ -99,7 +107,7 @@ class ManageDoctor extends Component {
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     let dataSelect = this.buildDataInputSelect(this.props.allDoctors, "USERS");
-    let { resPayment, resPrice, resProvince, resSpecialty } =
+    let { resPayment, resPrice, resProvince, resSpecialty, resClinic } =
       this.props.allRequiredDoctorInfo;
 
     if (prevProps.allDoctors !== this.props.allDoctors) {
@@ -115,11 +123,17 @@ class ManageDoctor extends Component {
         resProvince,
         "PROVINCE"
       );
+      let dataSelectSpecialty = this.buildDataInputSelect(
+        resSpecialty,
+        "SPECIALTY"
+      );
+      let dataSelectClinic = this.buildDataInputSelect(resClinic, "CLINIC");
       this.setState({
-        listDoctors: dataSelect,
         listPrice: dataSelectPrice,
         listPayment: dataSelectPayment,
         listProvince: dataSelectProvince,
+        listSpecialty: dataSelectSpecialty,
+        listClinic: dataSelectClinic,
       });
     }
 
@@ -134,12 +148,14 @@ class ManageDoctor extends Component {
         resSpecialty,
         "SPECIALTY"
       );
+      let dataSelectClinic = this.buildDataInputSelect(resClinic, "CLINIC");
 
       this.setState({
         listPrice: dataSelectPrice,
         listPayment: dataSelectPayment,
         listProvince: dataSelectProvince,
         listSpecialty: dataSelectSpecialty,
+        listClinic: dataSelectClinic,
       });
     }
   }
@@ -162,7 +178,8 @@ class ManageDoctor extends Component {
 
   handleChangeSelect = async (selectedDoctor) => {
     this.setState({ selectedDoctor });
-    let { listPayment, listPrice, listProvince, listSpecialty } = this.state;
+    let { listPayment, listPrice, listProvince, listSpecialty, listClinic } =
+      this.state;
 
     let response = await getDetailInfoDoctor(selectedDoctor.value);
     if (response && response.errCode === 0 && response.data.Markdown) {
@@ -175,10 +192,12 @@ class ManageDoctor extends Component {
         priceId = "",
         provinceId = "",
         specialtyId = "",
+        clinicId = "",
         selectedPrice = "",
         selectedPayment = "",
         selectedProvince = "",
-        selectedSpecialty = "";
+        selectedSpecialty = "",
+        selectedClinic = "";
 
       if (response.data.Doctor_Info) {
         addressClinic = response.data.Doctor_Info.addressClinic;
@@ -188,6 +207,7 @@ class ManageDoctor extends Component {
         priceId = response.data.Doctor_Info.priceId;
         provinceId = response.data.Doctor_Info.provinceId;
         specialtyId = response.data.Doctor_Info.specialtyId;
+        clinicId = response.data.Doctor_Info.clinicId;
 
         selectedPrice = listPrice.find((item) => {
           return item && item.value === priceId;
@@ -198,9 +218,11 @@ class ManageDoctor extends Component {
         selectedProvince = listProvince.find((item) => {
           return item && item.value === provinceId;
         });
-
         selectedSpecialty = listSpecialty.find((item) => {
           return item && item.value === specialtyId;
+        });
+        selectedClinic = listClinic.find((item) => {
+          return item && item.value === clinicId;
         });
       }
       this.setState({
@@ -215,6 +237,7 @@ class ManageDoctor extends Component {
         selectedPayment: selectedPayment,
         selectedProvince: selectedProvince,
         selectedSpecialty: selectedSpecialty,
+        selectedClinic: selectedClinic,
       });
     } else {
       this.setState({
@@ -229,6 +252,7 @@ class ManageDoctor extends Component {
         selectedPayment: "",
         selectedProvince: "",
         selectedSpecialty: "",
+        selectedClinic: "",
       });
     }
   };

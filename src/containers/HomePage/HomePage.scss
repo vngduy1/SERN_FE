@@ -50,18 +50,19 @@
   .section-body {
     .specialty-customize {
       padding: 0 2rem;
-      border: 1px solid gray;
+      // border: 1px solid gray;
+      box-shadow: 0 1px 6px #20212447;
       .bg-image {
-        height: 280px;
+        min-height: 280px;
         width: 100%;
-        background: url("../../assets/Specialty/1_1.svg");
         background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
       }
 
       .bg-image-specialty {
-        height: 280px;
+        min-height: 280px;
+        max-height: 300px;
         width: 100%;
         background-position: center center;
         background-repeat: no-repeat;
@@ -85,10 +86,31 @@
       }
     }
 
+    .clinic-customize {
+      display: flex;
+      flex-direction: column;
+      min-height: 300px;
+      max-height: 300px;
+      padding: 0 10px;
+      .bg-image-clinic {
+        min-height: 230px;
+        max-height: 240px;
+        width: 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .clinic-customize-title {
+        font-size: 15px;
+        text-align: justify;
+      }
+    }
+
     .good_doctor {
       width: 80% !important;
-      border: 1px solid rgb(125, 179, 220);
       margin: 0 8px;
+      max-height: 300px;
       .good_doctor_img {
         height: 200px;
         width: 50%;
@@ -123,7 +145,6 @@
 }
 
 .section-share {
-  height: 400px;
   .section-container {
     margin: 5px 70px;
     display: flex;
