@@ -87,7 +87,9 @@
     "province": "Province",
     "nameClinic": "Name clinic",
     "addressClinic": "clinic address",
-    "note": "note"
+    "note": "note",
+    "specialty": "Choose a Department",
+    "clinic": "Choose a clinic"
   },
   "manage-schedule": {
     "title": "Manage doctor's medical examination plans",
