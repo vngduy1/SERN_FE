@@ -1,3 +1,10 @@
+div._loading_overlay_wrapper {
+  position: unset;
+  ._loading_overlay_overlay {
+    z-index: 100000000;
+  }
+}
+
 .manage-patient-container {
   .manage-patient-title {
     font-size: 15px;
@@ -34,20 +41,12 @@
     }
 
     .mp-btn-confirm {
+      padding: 10px;
       margin-right: 10px;
-      height: 30px;
+      height: auto;
       border-radius: 3px;
       background-color: #ffc107;
-
-      &:hover {
-        opacity: 0.7;
-      }
-    }
-
-    .mp-btn-remedy {
-      height: 30px;
-      border-radius: 3px;
-      background-color: #45c3d2;
+      min-width: 60px;
 
       &:hover {
         opacity: 0.7;

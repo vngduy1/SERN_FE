@@ -88,8 +88,9 @@ class UserRedux extends Component {
     }
   }
 
-  handleOnchangeImage = async (files) => {
-    let file = files[0];
+  handleOnchangeImage = async (event) => {
+    let data = event.target.files;
+    let file = data[0];
     if (file) {
       let base64 = await CommonUtils.getBase64(file);
       let objectUrl = URL.createObjectURL(file);
@@ -393,7 +394,7 @@ class UserRedux extends Component {
                       id="previewImg"
                       hidden
                       onChange={(event) => {
-                        this.handleOnchangeImage(event.target.files);
+                        this.handleOnchangeImage(event);
                       }}
                     />
                     <label
